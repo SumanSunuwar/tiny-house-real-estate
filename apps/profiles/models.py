@@ -64,8 +64,13 @@ class Profile(TimeStampedUUIDModel):
         default=False,
         help_text=_("Are you looking to sell a property?")
     )
-    top_agent = models.BooleanField(
+    is_agent = models.BooleanField(
         verbose_name=_("Agent"),
+        default=False,
+        help_text=_("Are you an agent?")
+    )
+    top_agent = models.BooleanField(
+        verbose_name=_("Top Agent"),
         default=False,
     )
     rating = models.DecimalField(
