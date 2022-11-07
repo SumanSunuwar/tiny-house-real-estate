@@ -22,9 +22,9 @@ services:
   postgres-db:
     image: postgres:12.0-alpine
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
-      - postres_data:/var/lib/postgresql/data/
+      - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD={$POSTGRES_PASSWORD}
@@ -37,6 +37,6 @@ networks:
     driver: bridge
 
 volumes:
-  postres_data:
+  postgres_data:
   static_volume:
   media_volume:
